@@ -13,7 +13,7 @@ function next_branch() {
 }
 
 function latest_nightly_build() {
-  echo $(git log -50 --pretty=format:"%s○%H" | grep 'buildbot: update nightly version number' | cut -d'○' -f 2 | head -1)
+  echo $(git log master -50 --pretty=format:"%s○%H" | grep 'buildbot: update nightly version number' | cut -d'○' -f 2 | head -1)
 }
 
 function commit_with_msg() {
