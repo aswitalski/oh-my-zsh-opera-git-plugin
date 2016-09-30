@@ -39,5 +39,11 @@ function gcobwp() {
 }
 
 function gcowp() {
-  echo "git checkout $(latest_wp_branch $1)" | zsh
+  local branch=$(latest_wp_branch $1)
+  if ! [ -z $branch ]
+  then
+    echo "git checkout $branch" | zsh
+  else
+    echo "No branch found"
+  fi
 }
