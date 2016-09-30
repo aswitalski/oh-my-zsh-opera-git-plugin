@@ -16,6 +16,10 @@ function latest_nightly_build() {
   echo $(git log master -50 --pretty=format:"%s○%H" | grep 'buildbot: update nightly version number' | cut -d'○' -f 2 | head -1)
 }
 
+function latest_wp_branch() {
+  echo $(git branch -a | grep $1 | grep -v remotes | tail -r | head -1)
+}
+
 function commit_with_msg() {
   echo "git commit -m '$(work_package): $1'"
 }
@@ -32,4 +36,8 @@ function gcwp() {
 
 function gcobwp() {
   echo "git checkout -b 'wp/$1/1'" | zsh
+}
+
+function gcowp() {
+  echo "git checkout $(latest_wp_branch $1)" | zsh
 }
