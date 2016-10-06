@@ -24,6 +24,7 @@ function commit_with_msg() {
   echo "git commit -m '$(work_package): $1'"
 }
 
+alias cpwp='echo $(work_package) | tr -d "\n" | pbcopy'
 alias gcobn='git checkout -b $(next_branch)'
 alias gcop='git checkout $(prev_branch)'
 alias gcon='git checkout $(next_branch)'
