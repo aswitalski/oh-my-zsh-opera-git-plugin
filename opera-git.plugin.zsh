@@ -48,3 +48,5 @@ function gcowp() {
     echo "No branch found"
   fi
 }
+
+alias gfast='sudo sysctl kern.maxvnodes=$((512*1024))'
