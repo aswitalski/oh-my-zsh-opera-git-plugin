@@ -24,6 +24,7 @@ function commit_with_msg() {
   echo "git commit -m '$(work_package): $1'"
 }
 
+alias gfsu='cd chromium/src/ && gaa && git reset --hard && cd ... && gsu'
 alias cpwp='echo $(work_package) | tr -d "\n" | pbcopy'
 alias gcobn='git checkout -b $(next_branch)'
 alias gcop='git checkout $(prev_branch)'
