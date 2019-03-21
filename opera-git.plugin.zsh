@@ -32,6 +32,8 @@ alias gcon='git checkout $(next_branch)'
 alias grin='git rebase -i $(latest_nightly_build)'
 alias grins='git rebase -i --autosquash $(latest_nightly_build)'
 
+alias jira='$(echo "open https://bugs.opera.com/browse/$(work_package)")'
+
 function gcwp() {
   echo $(commit_with_msg $1) | zsh
 }
